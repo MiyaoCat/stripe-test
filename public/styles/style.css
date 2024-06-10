@@ -79,13 +79,21 @@ button:hover {
   opacity: 0.8;
 }
 
+.home button {
+  border-radius: 6px;
+}
 .home {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.home header {
+.home main {
+  border-radius: 10px;
+  background-color: #3e4151;
+  padding: 20px;
+}
+.home h1 {
   font-size: 30px;
   font-weight: 700;
   color: #ffde92;
