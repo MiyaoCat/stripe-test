@@ -93,7 +93,7 @@ button:hover {
   background-color: #3e4151;
   padding: 20px;
 }
-.home h1 {
+.home h1, .checkout h1 {
   font-size: 30px;
   font-weight: 700;
   color: #ffde92;
@@ -101,7 +101,9 @@ button:hover {
 
 .ejs {
   margin-bttom: 20px;
+  text-align: center;
 }
+
 .home a {
   color: #f9f9f9;
   text-decoration: none;
@@ -111,4 +113,9 @@ button:hover {
 
 .home form {
   margin-top: 20px;
+}
+
+body.checkout {
+  display: flex;
+  flex-direction: column;
 }
