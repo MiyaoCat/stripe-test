@@ -2,16 +2,20 @@
 <head>
 	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel="stylesheet" href="style.css">
 	<title>Home</title>
 </head>
-<body>
+<body class='home'>
 	<header>Welcome Home</header>
 	<main>
-		<a href='checkout.html'>Buy Something</a>
+		<div class="ejs">
+			<a href='checkout'>Click here to Checkout on ejs Page</a>
+		</div>
 
 		<form action="/create-checkout-session" method="POST">
         <button type="submit" id="checkout-button">Checkout</button>
     </form>
+
 	</main>
 </body>
 </html>

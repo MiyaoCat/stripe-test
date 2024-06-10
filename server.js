@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
     res.render('home'); // Render the 'home.ejs' template
 });
 
+app.get('/checkout', (req, res) => {
+    res.render('checkout'); // Render the 'home.ejs' template
+});
+
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [

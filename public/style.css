@@ -78,3 +78,29 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home header {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffde92;
+}
+
+.ejs {
+  margin-bttom: 20px;
+}
+.home a {
+  color: #f9f9f9;
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.home form {
+  margin-top: 20px;
+}
