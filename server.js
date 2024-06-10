@@ -7,6 +7,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('public', path.join(__dirname, 'public'));
 app.use(express.static('public'));
 
 const YOUR_DOMAIN = 'http://localhost:2024';
