@@ -1,19 +1,21 @@
 // This is your test secret API key.
 const stripe = require('stripe')('sk_test_51POXDuCYeKApvPddSAHznZfyVwYCnKHVxvivsWo1daQ80DBM1npelsQnGdX9YPqdlQDBCVqjopaZ7KXkdiTIIrGH00onkqzubE');
+const path = require('path');
 const express = require('express');
 const app = express();
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 const YOUR_DOMAIN = 'http://localhost:2024';
 
 app.get('/', (req, res) => {
-    res.render('home'); // Render the 'home.ejs' template
+    res.render('home'); 
 });
 
 app.get('/checkout', (req, res) => {
-    res.render('checkout'); // Render the 'home.ejs' template
+    res.render('checkout'); // 
 });
 
 app.post('/create-checkout-session', async (req, res) => {
