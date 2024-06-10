@@ -30,12 +30,20 @@ app.post('/create-checkout-session', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}/success.html`,
-    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+    success_url: `${YOUR_DOMAIN}/success`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
     automatic_tax: {enabled: true},
   });
 
   res.redirect(303, session.url);
+});
+
+app.get('/cancel', (req, res) => {
+    res.render('cancel'); // 
+});
+
+app.get('/success', (req, res) => {
+    res.render('success'); // 
 });
 
 
