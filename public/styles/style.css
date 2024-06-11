@@ -57,7 +57,7 @@ h5 {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.154px;
-  color: #242d60;
+  color: #f9f9f9;
   margin: 0;
 }
 h5 {
@@ -99,6 +99,10 @@ button:hover {
   font-size: 30px;
   font-weight: 700;
   color: #ffde92;
+}
+
+.home .ejs {
+  text-align: center;
 }
 
 .link {
