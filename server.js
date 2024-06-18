@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('public', path.join(__dirname, 'public'));
 app.use(express.static('public'));
 
-const YOUR_DOMAIN = 'http://localhost:2024';
+const YOUR_DOMAIN = 'https://stripe-test-hazel.vercel.app/';
 
 app.get('/', (req, res) => {
     res.render('home'); 
