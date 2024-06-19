@@ -19,6 +19,23 @@ app.use(express.static('public'));
 //live site https://stripe-test-hazel.vercel.app/
 const YOUR_DOMAIN = 'http://localhost:4242';
 
+
+const account = await stripe.accounts.create({
+  country: 'US',
+  email: 'jenny.rosen@example.com',
+  controller: {
+    fees: {
+      payer: 'application',
+    },
+    losses: {
+      payments: 'application',
+    },
+    stripe_dashboard: {
+      type: 'express',
+    },
+  },
+});
+
 app.get('/', (req, res) => {
     res.render('home'); 
 });
