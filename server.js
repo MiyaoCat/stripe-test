@@ -17,7 +17,7 @@ app.set('public', path.join(__dirname, 'public'));
 app.use(express.static('public'));
 
 //live site https://stripe-test-hazel.vercel.app/
-const YOUR_DOMAIN = 'http://localhost:4242';
+const YOUR_DOMAIN = 'live site https://stripe-test-hazel.vercel.app/2';
 
 
 // if (!stripeSecretKey) {
