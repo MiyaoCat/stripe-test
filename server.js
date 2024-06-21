@@ -17,13 +17,8 @@ app.set('public', path.join(__dirname, 'public'));
 app.use(express.static('public'));
 
 //live site https://stripe-test-hazel.vercel.app/
-const YOUR_DOMAIN = 'live site https://stripe-test-hazel.vercel.app/2';
+const YOUR_DOMAIN = 'https://stripe-test-hazel.vercel.app/2';
 
-
-// if (!stripeSecretKey) {
-//   console.error("Stripe Secret Key is not defined. Please check your .env file.");
-//   process.exit(1); // Exit if the key is not defined
-// }
 
 app.get('/', (req, res) => {
     res.render('home'); 
