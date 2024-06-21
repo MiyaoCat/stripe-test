@@ -20,21 +20,10 @@ app.use(express.static('public'));
 const YOUR_DOMAIN = 'http://localhost:4242';
 
 
-const account = await stripe.accounts.create({
-  country: 'US',
-  email: 'jenny.rosen@example.com',
-  controller: {
-    fees: {
-      payer: 'application',
-    },
-    losses: {
-      payments: 'application',
-    },
-    stripe_dashboard: {
-      type: 'express',
-    },
-  },
-});
+// if (!stripeSecretKey) {
+//   console.error("Stripe Secret Key is not defined. Please check your .env file.");
+//   process.exit(1); // Exit if the key is not defined
+// }
 
 app.get('/', (req, res) => {
     res.render('home'); 
@@ -47,7 +36,7 @@ app.get('/checkout', (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
+      payment_method_types: ['card', 'cashapp'],
       mode: 'payment',
       line_items: [
         {
