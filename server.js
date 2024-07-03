@@ -29,7 +29,7 @@ app.get('/checkout', (req, res) => {
 });
 
 app.post('/create-checkout-session', async (req, res) => {
-  try {
+  
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
@@ -46,10 +46,7 @@ app.post('/create-checkout-session', async (req, res) => {
     });
 
   res.redirect(303, session.url);
-  }catch (error) {
-    console.error(`Error creating checkout session: ${error.message}`);
-    res.status(500).send('Internal Server Error');
-  }
+  
 });
 
 app.get('/cancel', (req, res) => {
