@@ -20,7 +20,6 @@ app.use(express.static('public'));
 //http://localhost:4242
 const YOUR_DOMAIN = 'https://stripe-test-hazel.vercel.app/';
 
-
 app.get('/', (req, res) => {
     res.render('home'); 
 });
@@ -37,10 +36,6 @@ app.post('/create-checkout-session', async (req, res) => {
       line_items: [
         {
           price: 'price_1POqO2CYeKApvPddvD0XBDdX',
-          quantity: 1,
-        },
-        {
-          price: 'price_1POwS4CYeKApvPddTuD12dF7',
           quantity: 1,
         }
       ],
@@ -65,5 +60,5 @@ app.get('/success', (req, res) => {
     res.render('success'); // 
 });
 
-const PORT = 'https://stripe-test-hazel.vercel.app/';
+const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => console.log('Running on port 4242'));
