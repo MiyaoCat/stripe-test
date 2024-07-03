@@ -4,7 +4,7 @@ dotenv.config();
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
-// console.log(`Stripe Secret Key: ${stripeSecretKey}`); 
+console.log(`Stripe Secret Key: ${stripeSecretKey}`); 
 const stripe = require('stripe')(stripeSecretKey);
 const path = require('path');
 const express = require('express');
@@ -16,8 +16,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('public', path.join(__dirname, 'public'));
 app.use(express.static('public'));
 
-//live site https://stripe-test-hazel.vercel.app/http://localhost:4242
-const YOUR_DOMAIN = 'https://stripe-test-hazel.vercel.app/';
+//live site https://stripe-test-hazel.vercel.app/
+//http://localhost:4242
+const YOUR_DOMAIN = process.env('https://stripe-test-hazel.vercel.app/') || 'http://localhost:4242';
 
 
 app.get('/', (req, res) => {
@@ -64,5 +65,5 @@ app.get('/success', (req, res) => {
     res.render('success'); // 
 });
 
-
-app.listen('https://stripe-test-hazel.vercel.app/', () => console.log('Running on port 4242'));
+const PORT = 'https://stripe-test-hazel.vercel.app/';
+app.listen(PORT, () => console.log('Running on port 4242'));
