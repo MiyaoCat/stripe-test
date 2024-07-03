@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('public', path.join(__dirname, 'public'));
 app.use(express.static('public'));
 
-//live site https://stripe-test-hazel.vercel.app/
+//live site https://stripe-test-hazel.vercel.app/http://localhost:4242
 const YOUR_DOMAIN = 'https://stripe-test-hazel.vercel.app/';
 
 
@@ -35,7 +35,6 @@ app.post('/create-checkout-session', async (req, res) => {
       mode: 'payment',
       line_items: [
         {
-          // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
           price: 'price_1POqO2CYeKApvPddvD0XBDdX',
           quantity: 1,
         },
@@ -66,4 +65,4 @@ app.get('/success', (req, res) => {
 });
 
 
-app.listen(4242, () => console.log('Running on port 4242'));
+// app.listen(4242, () => console.log('Running on port 4242'));
