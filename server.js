@@ -6,7 +6,7 @@ const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
 console.log(`Stripe Secret Key: ${stripeSecretKey}`); 
 
-const stripe = require('stripe')('sk_test_51POXDuCYeKApvPddSAHznZfyVwYCnKHVxvivsWo1daQ80DBM1npelsQnGdX9YPqdlQDBCVqjopaZ7KXkdiTIIrGH00onkqzubE');
+const stripe = require('stripe')(`${stripeSecretKey}`);
 const path = require('path');
 const express = require('express');
 const app = express();
