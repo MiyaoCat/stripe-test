@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 //live site https://stripe-test-hazel.vercel.app/
 //http://localhost:4242
-const YOUR_DOMAIN = process.env('https://stripe-test-hazel.vercel.app/') || 'http://localhost:4242';
+const YOUR_DOMAIN = 'https://stripe-test-hazel.vercel.app/';
 
 
 app.get('/', (req, res) => {
